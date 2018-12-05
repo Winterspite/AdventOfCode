@@ -26,7 +26,6 @@ int main(int argc, const char * argv[]) {
         ChallengeDay01Problem01(fDay01);
         ChallengeDay01Problem02(fDay01);
         
-        
     }
     
     
