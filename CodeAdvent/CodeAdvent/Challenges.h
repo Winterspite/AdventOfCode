@@ -15,5 +15,17 @@
 int ChallengeDay01Problem01(FileReader& fileReader);
 int ChallengeDay01Problem02(FileReader& fileReader);
 
+int ChallengeDay02Problem01(FileReader& fileReader);
+int ChallengeDay02Problem02(FileReader& fileReader);
+
+int ChallengeDay03Problem01(FileReader& fileReader);
+int ChallengeDay03Problem02(FileReader& fileReader);
+
+int ChallengeDay04Problem01(FileReader& fileReader);
+int ChallengeDay04Problem02(FileReader& fileReader);
+
+int ChallengeDay05Problem01(FileReader& fileReader);
+int ChallengeDay05Problem02(FileReader& fileReader);
+
 
 #endif /* Challenges_h */

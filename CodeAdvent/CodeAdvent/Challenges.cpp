@@ -50,3 +50,40 @@ int ChallengeDay01Problem02(FileReader& fileReader)
     }
     return -1337;
 }
+
+
+int ChallengeDay02Problem01(FileReader& fileReader)
+{
+    return 0;
+}
+int ChallengeDay02Problem02(FileReader& fileReader)
+{
+    return 0;
+}
+
+int ChallengeDay03Problem01(FileReader& fileReader)
+{
+    return 0;
+}
+int ChallengeDay03Problem02(FileReader& fileReader)
+{
+    return 0;
+}
+
+int ChallengeDay04Problem01(FileReader& fileReader)
+{
+    return 0;
+}
+int ChallengeDay04Problem02(FileReader& fileReader)
+{
+    return 0;
+}
+
+int ChallengeDay05Problem01(FileReader& fileReader)
+{
+    return 0;
+}
+int ChallengeDay05Problem02(FileReader& fileReader)
+{
+    return 0;
+}
