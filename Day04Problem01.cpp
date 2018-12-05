@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fstream>
-#include <vector>
-#include <map>
-#include <regex>
-#include <set>
-
+#include "Advent.h"
 
 const char* filename = "04_input.txt";
 std::set<std::string> lines;
