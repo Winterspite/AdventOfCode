@@ -24,7 +24,7 @@ int ChallengeDay03Problem02(FileReader& fileReader);
 int ChallengeDay04Problem01(FileReader& fileReader);
 int ChallengeDay04Problem02(FileReader& fileReader);
 
-int ChallengeDay05Problem01(FileReader& fileReader);
+std::string ChallengeDay05Problem01(FileReader& fileReader);
 int ChallengeDay05Problem02(FileReader& fileReader);
 
 

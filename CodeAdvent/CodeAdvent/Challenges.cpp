@@ -79,10 +79,11 @@ int ChallengeDay04Problem02(FileReader& fileReader)
     return 0;
 }
 
-int ChallengeDay05Problem01(FileReader& fileReader)
+std::string ChallengeDay05Problem01(FileReader& fileReader)
 {
-    return 0;
+    return "";
 }
+
 int ChallengeDay05Problem02(FileReader& fileReader)
 {
     return 0;

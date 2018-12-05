@@ -17,6 +17,19 @@ bool TestHarness::RunTestHarness()
     
     bPassTests = bPassTests | TestDay01Challenge01();
     bPassTests = bPassTests | TestDay01Challenge02();
+    
+    bPassTests = bPassTests | TestDay02Challenge01();
+    bPassTests = bPassTests | TestDay02Challenge02();
+
+    bPassTests = bPassTests | TestDay03Challenge01();
+    bPassTests = bPassTests | TestDay03Challenge02();
+
+    bPassTests = bPassTests | TestDay04Challenge01();
+    bPassTests = bPassTests | TestDay04Challenge02();
+
+    bPassTests = bPassTests | TestDay05Challenge01();
+    bPassTests = bPassTests | TestDay05Challenge02();
+
 
     
     printf("\nTests: %d\n", NumTests);
@@ -59,6 +72,58 @@ bool TestHarness::TestDay01Challenge02()
     return bTestResult;
 }
 
+bool TestHarness::TestDay02Challenge01()
+{
+    return true;
+}
+
+bool TestHarness::TestDay02Challenge02()
+{
+    return true;
+}
+
+bool TestHarness::TestDay03Challenge01()
+{
+    return true;
+}
+
+bool TestHarness::TestDay03Challenge02()
+{
+    return true;
+}
+
+bool TestHarness::TestDay04Challenge01()
+{
+    return true;
+}
+
+bool TestHarness::TestDay04Challenge02()
+{
+    return true;
+}
+
+
+bool TestHarness::TestDay05Challenge01()
+{
+    ++NumTests;
+    FileReader fr("05_sample.txt");
+    const std::string ExpectedResult = "dabCBAcaDA";
+    
+    const std::string TestResult = ChallengeDay05Problem01(fr);
+    const bool bTestResult = (TestResult == ExpectedResult);
+    
+    if (!bTestResult)
+    {
+        printf("%s: Fail: %s != %s\n", __func__, ExpectedResult.c_str(), TestResult.c_str());
+    }
+    bTestResult ? ++NumPass : ++NumFail;
+    return bTestResult;
+}
+
+bool TestHarness::TestDay05Challenge02()
+{
+    return true;
+}
 
 TestHarness::TestHarness()
 {
