@@ -11,7 +11,7 @@
 FileReader::FileReader(const char* inFile)
 {
     // Creates a filereader from a given input file
-    Filename.append("../ChallengeInput/"); // Doing this to locate the input file
+    Filename.append("ChallengeInput/"); // Doing this to locate the input file
     Filename.append(inFile);
     
     Read();
@@ -31,6 +31,7 @@ void FileReader::Read()
     else
     {
         printf("FAIL: Couldn't open %s\n", Filename.c_str());
+        exit(-1);
     }
 }
 
