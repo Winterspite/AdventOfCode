@@ -107,14 +107,14 @@ bool TestHarness::TestDay05Challenge01()
 {
     ++NumTests;
     FileReader fr("05_sample.txt");
-    const std::string ExpectedResult = "dabCBAcaDA";
+    const int ExpectedResult = 10;
     
-    const std::string TestResult = ChallengeDay05Problem01(fr);
+    const int TestResult = ChallengeDay05Problem01(fr);
     const bool bTestResult = (TestResult == ExpectedResult);
     
     if (!bTestResult)
     {
-        printf("%s: Fail: %s != %s\n", __func__, ExpectedResult.c_str(), TestResult.c_str());
+        printf("%s: Fail: %d != %d\n", __func__, ExpectedResult, TestResult);
     }
     bTestResult ? ++NumPass : ++NumFail;
     return bTestResult;

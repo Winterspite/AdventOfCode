@@ -28,6 +28,8 @@ int main(int argc, const char * argv[]) {
         
     }
     
+    FileReader fDay05("05_input.txt");
+    ChallengeDay05Problem01(fDay05);
     
     return 0;
 }

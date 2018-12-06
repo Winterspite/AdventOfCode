@@ -79,9 +79,53 @@ int ChallengeDay04Problem02(FileReader& fileReader)
     return 0;
 }
 
-std::string ChallengeDay05Problem01(FileReader& fileReader)
+int ChallengeDay05Problem01(FileReader& fileReader)
 {
-    return "";
+    std::string Polymer;
+    
+    for (std::string line : fileReader.GetLines())
+    {
+        Polymer = line;
+        int caseDifference = 'a' - 'A'; // 97 - 65
+        // Convert to a vector of chars for faster manipulation
+        std::vector<char> polyVec;
+        for (int Idx = 0; Idx < Polymer.size(); Idx++)
+        {
+            polyVec.push_back(Polymer[Idx]);
+        }
+        
+        int numChanges = 0;
+        int Idx = 0;
+        
+        do
+        {
+            numChanges = 0;
+            bool bMatch = (
+                (polyVec[Idx] == (polyVec[Idx+1] + caseDifference))
+             || (polyVec[Idx] == (polyVec[Idx+1] - caseDifference))
+            );
+            if (bMatch)
+            {
+                numChanges++;
+                polyVec.erase(polyVec.begin()+Idx,polyVec.begin()+Idx+2); // Removing two characters
+                Idx = 0;
+            }
+            else
+            {
+                Idx++;
+            }
+        } while (Idx < polyVec.size());
+        
+        Polymer.erase();
+        for (char c : polyVec)
+        {
+            Polymer += c;
+        }
+    }
+    
+    printf("%s: %ld\n", __func__, Polymer.size());
+
+    return (int)Polymer.size();
 }
 
 int ChallengeDay05Problem02(FileReader& fileReader)
