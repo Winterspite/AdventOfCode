@@ -26,10 +26,15 @@ int main(int argc, const char * argv[]) {
         ChallengeDay01Problem01(fDay01);
         ChallengeDay01Problem02(fDay01);
         
+        FileReader fDay05("05_input.txt");
+        ChallengeDay05Problem01(fDay05);
+
     }
     
-    FileReader fDay05("05_input.txt");
-    ChallengeDay05Problem01(fDay05);
+   FileReader fDay05("05_input.txt");
+   ChallengeDay05Problem02(fDay05);
+
+    
     
     return 0;
 }

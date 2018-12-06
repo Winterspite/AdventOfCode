@@ -11,7 +11,7 @@
 FileReader::FileReader(const char* inFile)
 {
     // Creates a filereader from a given input file
-    Filename.append("ChallengeInput/"); // Doing this to locate the input file
+    Filename.append("/Users/joe.barrett/Code/CodeAdvent/ChallengeInput/"); // Doing this to locate the input file
     Filename.append(inFile);
     
     Read();

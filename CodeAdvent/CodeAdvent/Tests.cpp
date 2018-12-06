@@ -122,7 +122,19 @@ bool TestHarness::TestDay05Challenge01()
 
 bool TestHarness::TestDay05Challenge02()
 {
-    return true;
+    ++NumTests;
+    FileReader fr("05_sample.txt");
+    const int ExpectedResult = 4;
+    
+    const int TestResult = ChallengeDay05Problem02(fr);
+    const bool bTestResult = (TestResult == ExpectedResult);
+    
+    if (!bTestResult)
+    {
+        printf("%s: Fail: %d != %d\n", __func__, ExpectedResult, TestResult);
+    }
+    bTestResult ? ++NumPass : ++NumFail;
+    return bTestResult;
 }
 
 TestHarness::TestHarness()

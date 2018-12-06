@@ -130,5 +130,75 @@ int ChallengeDay05Problem01(FileReader& fileReader)
 
 int ChallengeDay05Problem02(FileReader& fileReader)
 {
-    return 0;
+    std::string Polymer;
+    std::string GoodString;
+    bool bSet = false;
+    
+    for (std::string line : fileReader.GetLines())
+    {
+        // Rotate through alphabet removing each letter in turn
+        for (int AlphaIdx = 0; AlphaIdx < 26; AlphaIdx++)
+        {
+            Polymer = line;
+            int caseDifference = 'a' - 'A'; // 97 - 65
+            // Remove this iteration's letter, case insensitive
+            Polymer.erase(std::remove(Polymer.begin(), Polymer.end(), (char)('a'+AlphaIdx)), Polymer.end());
+            Polymer.erase(std::remove(Polymer.begin(), Polymer.end(), (char)('A'+AlphaIdx)), Polymer.end());
+
+            // Convert to a vector of chars for faster manipulation
+            int maxArrSize = (int)Polymer.size();
+            char polyArr[maxArrSize];
+            for (int Idx = 0; Idx < Polymer.size(); Idx++)
+            {
+                polyArr[Idx] = Polymer[Idx];
+            }
+            
+            int Idx = 0;
+            
+            do
+            {
+                bool bMatch = (
+                               (polyArr[Idx] == (polyArr[Idx+1] + caseDifference))
+                               || (polyArr[Idx] == (polyArr[Idx+1] - caseDifference))
+                               );
+                if (bMatch)
+                {
+                    // Removing the two characters
+                    //polyArr[Idx] = polyArr[Idx+2]; // Jump two ahead
+                    for (int SkipIdx = Idx + 2; Idx < maxArrSize - 2; SkipIdx++, Idx++)
+                    {
+                        polyArr[Idx] = polyArr[SkipIdx];
+                    }
+                    polyArr[maxArrSize-2] = 0;
+                    polyArr[maxArrSize-1] = 0;
+                    
+                    Idx = 0;
+                }
+                else
+                {
+                    Idx++;
+                }
+            } while (Idx < maxArrSize);
+            
+            Polymer.clear();
+            for (char c : polyArr)
+            {
+                Polymer += c;
+            }
+            
+            if (!bSet)
+            {
+                bSet = true;
+                GoodString = Polymer;
+            }
+            if (strlen(Polymer.c_str()) < strlen(GoodString.c_str()))
+            {
+                GoodString = Polymer;
+            }
+        }
+    }
+    
+    printf("%s: %ld\n", __func__, strlen(GoodString.c_str()));
+
+    return strlen(GoodString.c_str());
 }
